@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
+
 import { RecipeService } from '../recipe.service';
 
 @Component({
@@ -37,6 +38,7 @@ export class RecipeEditComponent implements OnInit {
     let recipeName = '';
     let recipeImagePath = '';
     let recipeDescription = '';
+    let recipeIngredients = new FormArray([]);
 
 
     if (this.editMode) {
